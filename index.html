@@ -520,10 +520,9 @@
     </main>
 
     <!-- ===== PREVIOUS VERSION POPUP MODAL ===== -->
-    <div id="prev-ver-modal" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden" onclick="closePrevVerModal(event)">
-        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+    <div id="prev-ver-modal" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" onclick="closePrevVerModal()"></div>
         <div class="relative bg-white dark:bg-darkcard rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md z-10 overflow-hidden">
-            <!-- Header -->
             <div class="bg-gradient-to-r from-slate-700 to-slate-800 px-6 py-5 flex items-center justify-between">
                 <div>
                     <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Previous Version</div>
@@ -534,27 +533,22 @@
                 </button>
             </div>
             <div class="px-6 py-5 space-y-4">
-                <!-- Description -->
                 <p id="pvm-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed"></p>
-                <!-- Features -->
                 <div>
                     <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Features in this version</h4>
                     <ul id="pvm-features" class="space-y-1 text-sm text-slate-600 dark:text-slate-300"></ul>
                 </div>
-                <!-- Meta -->
                 <div class="flex items-center gap-4 text-xs font-mono text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
                     <span id="pvm-date"></span>
                     <span id="pvm-size"></span>
                 </div>
-                <!-- Ad Box -->
                 <div class="w-full rounded-xl overflow-hidden bg-slate-800 border border-slate-700" style="min-height:80px">
                     <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-5565071752876543" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
                     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                 </div>
-                <!-- Download Button -->
                 <button id="pvm-dl-btn" onclick="startPvmTimer()" class="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-bold py-4 rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
                     <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
-                    <span>Download v<span id="pvm-ver-label"></span></span>
+                    <span id="pvm-btn-text">Download</span>
                 </button>
                 <p class="text-xs text-center text-slate-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Older versions may be less stable. DWYOR.</p>
             </div>
@@ -596,33 +590,42 @@
             {
                 id: 'xiantian-pro-83',
                 title: 'XianTian Pro',
-                version: 'v8.3',
+                version: 'v8.4',
                 type: 'App',
                 tags: ['root', 'nonRoot'],
                 status: 'Latest Release',
-                date: 'Mar 11, 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260311_092033_320.jpg',
-                shortDesc: 'Advanced performance application for Android system optimization. Supports both Root and Non-Root execution via Shizuku integration.',
+                date: 'Mar 25, 2026',
+                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260404_170851_003.jpg',
+                shortDesc: 'Advanced performance application for Android system optimization. Supports both Root and Non-Root execution via Shizuku / KernelSU / Magisk. App Version 2.3.',
                 icon: 'fa-microchip',
                 compatibility: [
-                    { label: 'Android 8.0+',      supported: true  },
-                    { label: 'Root Support',       supported: true  },
-                    { label: 'Shizuku (Non-Root)', supported: true  },
-                    { label: 'ARM & ARM64',        supported: true  },
-                    { label: 'x86 / x86_64',       supported: false }
+                    { label: 'Android 8.0+',              supported: true  },
+                    { label: 'Root (Magisk / KernelSU)',   supported: true  },
+                    { label: 'Non-Root via Shizuku',       supported: true  },
+                    { label: 'ARM & ARM64',                supported: true  },
+                    { label: 'x86 / x86_64',               supported: false }
                 ],
                 features: [
-                    'FPS Monitor (Root)', 'CPU Info', 'Refreshed UI', 'Non-Root Support via Shizuku',
-                    'Downscale (Root & Non-Root)', 'Graphics Driver Override', 'Reduce Logging & Tracing',
-                    'Performance Profile (Root)', 'Preload Manager', 'Smart Cache Cleaner',
-                    'Touch Responsiveness Boost', 'Background App Killer', 'GPU 2D Render Mode',
-                    'Scale Animation Control', 'Prioritize Foreground Game', 'Disable Thermal Throttle',
-                    'IO Scheduler Tuning', 'VM Memory Tweak', 'Aggressive LMK',
-                    'TCP Low Latency', 'Lock FPS', 'GameBoost Tab', 'And more features...'
+                    'Featured & Bug Fixes',
+                    'Fix: Game not detected issue',
+                    'Fix: Preload behavior',
+                    'Add: Advanced Kernel Tweaks',
+                    'Add: Setting — Swappiness',
+                    'Add: Setting — Cache Pressure',
+                    'Add: Setting — Page Cluster',
+                    'Add: Setting — Dirty Ratio',
+                    'Add: Setting — Read Ahead',
+                    'Add: Setting — I/O Scheduler',
+                    'Add: Setting — TCP Congestion Control',
+                    'Add: Card Battery',
+                    'Add: Card Memory & Management',
+                    'Add: Running Background Apps',
+                    'Add: DexOpt'
                 ],
                 notes: [
-                    'Non-root features are accessible inside AppProfile.',
-                    'GameBoost tab contains additional Non-Root options.'
+                    'Non-root features accessible via Shizuku inside AppProfile.',
+                    'GameBoost tab contains additional Non-Root options.',
+                    'Kernel tweaks require Root (Magisk/KernelSU).'
                 ],
                 credits: ['@AduhaiWelewele', '@HoyoSlave', '@Nekotor1999', '@anomaly_arc', '@Shemywifee'],
                 specialThanks: '@zuanvfx01 — Thank you for the tremendous help.',
@@ -630,11 +633,41 @@
                 install: [
                     'Download the APK from the release link below.',
                     'Install the APK on your Android device.',
-                    'Connect via Shizuku (Non-Root) or grant Superuser permission (Root).',
+                    'Connect via Shizuku (Non-Root) or grant Superuser permission (Root/KernelSU).',
                     'Open the app, apply your preferred tweaks, and enjoy.'
                 ],
-                fileSize: '6.08MB',
-                downloadLink: 'https://www.mediafire.com/file/4g9vwen8jzppupn/JavaPro-Release-22727308226.zip/file'
+                fileSize: '~7 MB',
+                downloadLink: 'https://www.mediafire.com/file/q4a8iebxhe9ri9f/JavaPro1.apk/file',
+                previousVersions: [
+                    {
+                        version: '8.3',
+                        date: 'Mar 11, 2026',
+                        fileSize: '6.08 MB',
+                        downloadLink: 'https://www.mediafire.com/file/4g9vwen8jzppupn/JavaPro-Release-22727308226.zip/file',
+                        description: 'XianTian Pro v8.3 — previous stable release. Full performance suite with Shizuku support, GameBoost, FPS Monitor, and more.',
+                        features: [
+                            'FPS Monitor (Root)',
+                            'CPU Info & Performance Profile',
+                            'Non-Root Support via Shizuku',
+                            'Downscale (Root & Non-Root)',
+                            'Graphics Driver Override',
+                            'Reduce Logging & Tracing',
+                            'Preload Manager',
+                            'Smart Cache Cleaner',
+                            'Touch Responsiveness Boost',
+                            'Background App Killer',
+                            'GPU 2D Render Mode',
+                            'Scale Animation Control',
+                            'Disable Thermal Throttle',
+                            'IO Scheduler Tuning',
+                            'VM Memory Tweak',
+                            'Aggressive LMK',
+                            'TCP Low Latency',
+                            'Lock FPS',
+                            'GameBoost Tab'
+                        ]
+                    }
+                ]
             },
             {
                 id: 'RenderUI',
@@ -1268,46 +1301,46 @@
             }
         });
 
-        // ================= PREVIOUS VERSION MODAL =================
         let pvmTimerInterval = null;
         let pvmDownloadUrl = '';
+        let pvmCurrentVersion = '';
 
         function openPrevVerModal(modId, pvIdx) {
             const mod = modulesData.find(m => m.id === modId);
             if (!mod || !mod.previousVersions) return;
             const pv = mod.previousVersions[pvIdx];
             if (!pv) return;
+
+            if (pvmTimerInterval) { clearInterval(pvmTimerInterval); pvmTimerInterval = null; }
+
             pvmDownloadUrl = pv.downloadLink;
-            document.getElementById('pvm-title').textContent   = mod.title + ' v' + pv.version;
-            document.getElementById('pvm-desc').textContent    = pv.description || '';
-            document.getElementById('pvm-ver-label').textContent = pv.version;
-            document.getElementById('pvm-date').innerHTML      = '<i class="fa-solid fa-calendar mr-1"></i>' + pv.date;
-            document.getElementById('pvm-size').innerHTML      = '<i class="fa-solid fa-file mr-1"></i>' + pv.fileSize;
-            document.getElementById('pvm-features').innerHTML  = (pv.features || []).map(f =>
+            pvmCurrentVersion = pv.version;
+
+            document.getElementById('pvm-title').textContent  = mod.title + ' v' + pv.version;
+            document.getElementById('pvm-desc').textContent   = pv.description || '';
+            document.getElementById('pvm-date').innerHTML     = '<i class="fa-solid fa-calendar mr-1"></i>' + pv.date;
+            document.getElementById('pvm-size').innerHTML     = '<i class="fa-solid fa-file mr-1"></i>' + pv.fileSize;
+            document.getElementById('pvm-features').innerHTML = (pv.features || []).map(f =>
                 `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-0.5 flex-shrink-0 text-xs"></i><span>${f}</span></li>`
             ).join('');
-            resetPvmButton();
+
+            const btn = document.getElementById('pvm-dl-btn');
+            btn.disabled = false;
+            btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            document.getElementById('pvm-btn-text').textContent = 'Download v' + pv.version;
+
             document.getElementById('prev-ver-modal').classList.remove('hidden');
             document.body.style.overflow = 'hidden';
         }
 
-        function closePrevVerModal(e) {
-            if (e && e.currentTarget !== e.target) return;
-            if (pvmTimerInterval) clearInterval(pvmTimerInterval);
+        function closePrevVerModal() {
+            if (pvmTimerInterval) { clearInterval(pvmTimerInterval); pvmTimerInterval = null; }
             document.getElementById('prev-ver-modal').classList.add('hidden');
             document.body.style.overflow = '';
-            resetPvmButton();
-        }
-
-        function resetPvmButton() {
-            if (pvmTimerInterval) clearInterval(pvmTimerInterval);
-            pvmTimerInterval = null;
             const btn = document.getElementById('pvm-dl-btn');
-            if (!btn) return;
             btn.disabled = false;
             btn.classList.remove('opacity-70', 'cursor-not-allowed');
-            const verLabel = document.getElementById('pvm-ver-label') ? document.getElementById('pvm-ver-label').textContent : '';
-            btn.innerHTML = `<i class="fa-solid fa-cloud-arrow-down text-xl"></i> <span>Download v${verLabel}</span>`;
+            document.getElementById('pvm-btn-text').textContent = 'Download v' + pvmCurrentVersion;
         }
 
         function startPvmTimer() {
@@ -1316,21 +1349,17 @@
             btn.disabled = true;
             btn.classList.add('opacity-70', 'cursor-not-allowed');
             let t = 15;
-            btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> <span class="font-mono text-lg ml-2">${t}s</span> <span class="ml-1 text-sm font-normal">Wait...</span>`;
+            document.getElementById('pvm-btn-text').textContent = t + 's — Wait...';
             pvmTimerInterval = setInterval(() => {
                 t--;
                 if (t <= 0) {
                     clearInterval(pvmTimerInterval);
                     pvmTimerInterval = null;
-                    btn.innerHTML = `<i class="fa-solid fa-check-double text-xl"></i> <span class="ml-2">Redirecting...</span>`;
+                    document.getElementById('pvm-btn-text').textContent = 'Redirecting...';
                     window.location.href = pvmDownloadUrl;
-                    setTimeout(() => {
-                        document.getElementById('prev-ver-modal').classList.add('hidden');
-                        document.body.style.overflow = '';
-                        resetPvmButton();
-                    }, 2000);
+                    setTimeout(() => { closePrevVerModal(); }, 2500);
                 } else {
-                    btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> <span class="font-mono text-lg ml-2">${t}s</span> <span class="ml-1 text-sm font-normal">Wait...</span>`;
+                    document.getElementById('pvm-btn-text').textContent = t + 's — Wait...';
                 }
             }, 1000);
         }
