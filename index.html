@@ -11,10 +11,10 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Java_nih_deks — Android System Tweaks & Performance Tools</title>
+    <title>XJavaLab — Android System Tweaks & Performance Tools</title>
     <meta name="description" content="Free Android performance tools and system modification downloads. Supports Root and Non-Root via Shizuku.">
     <meta name="keywords" content="android tweak, android performance, shizuku, root android, system optimization, apk, fps boost, android tools free, magisk module, kernelsu">
-    <meta name="author" content="Java_nih_deks">
+    <meta name="author" content="XJavaLab">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,7 +24,7 @@
     <link rel="canonical" href="https://sorumstylxjava.github.io/">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://sorumstylxjava.github.io/">
-    <meta property="og:title" content="Java_nih_deks — Android System Tweaks & Performance Tools">
+    <meta property="og:title" content="XJavaLab — Android System Tweaks & Performance Tools">
     <meta property="og:description" content="Free Android performance tools. Root & Non-Root support.">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5565071752876543" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -132,7 +132,7 @@
                     <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white shadow-lg">
                         <i class="fa-solid fa-microchip text-sm"></i>
                     </div>
-                    <span class="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary hidden sm:block tracking-tight">Java_nih_deks</span>
+                    <span class="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary hidden sm:block tracking-tight">XJavaLab</span>
                 </div>
 
                 <div class="hidden md:flex items-center gap-1">
@@ -336,8 +336,14 @@
                         <p id="detail-thanks" class="text-blue-800 dark:text-blue-300 text-sm"></p>
                     </div>
 
-                    <!-- AdSense after special thanks -->
-                    <div class="w-full rounded-2xl overflow-hidden bg-slate-800 border border-slate-700" style="min-height:90px">
+                    <div id="detail-prev-versions-container" class="hidden">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white border-b border-slate-200 dark:border-slate-700 pb-2 mb-4">
+                            <i class="fa-solid fa-clock-rotate-left text-slate-400 mr-2"></i>Previous Versions
+                        </h3>
+                        <div id="detail-prev-versions-list" class="space-y-3"></div>
+                    </div>
+
+                    
                         <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-5565071752876543" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
                         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                     </div>
@@ -397,7 +403,7 @@
                         J
                     </div>
                     <div class="text-center md:text-left">
-                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">Java_nih_deks</h3>
+                        <h3 class="text-2xl font-bold text-slate-900 dark:text-white">XJavaLab</h3>
                         <p class="text-primary font-medium mb-4">Android System Enthusiast</p>
                         <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
                             Welcome to the official repository. This site is dedicated to providing free, high-quality Android system modules, performance tweaks, and optimization tools for both Rooted and Non-Rooted devices.
@@ -512,6 +518,48 @@
         <!-- ===== ARTICLES PAGE ===== -->
 
     </main>
+
+    <!-- ===== PREVIOUS VERSION POPUP MODAL ===== -->
+    <div id="prev-ver-modal" class="fixed inset-0 z-[999] flex items-center justify-center p-4 hidden" onclick="closePrevVerModal(event)">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="relative bg-white dark:bg-darkcard rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 w-full max-w-md z-10 overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-slate-700 to-slate-800 px-6 py-5 flex items-center justify-between">
+                <div>
+                    <div class="text-xs font-bold uppercase tracking-widest text-slate-400 mb-1">Previous Version</div>
+                    <h3 id="pvm-title" class="text-xl font-extrabold text-white"></h3>
+                </div>
+                <button onclick="closePrevVerModal()" class="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-all">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="px-6 py-5 space-y-4">
+                <!-- Description -->
+                <p id="pvm-desc" class="text-sm text-slate-500 dark:text-slate-400 leading-relaxed"></p>
+                <!-- Features -->
+                <div>
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-2">Features in this version</h4>
+                    <ul id="pvm-features" class="space-y-1 text-sm text-slate-600 dark:text-slate-300"></ul>
+                </div>
+                <!-- Meta -->
+                <div class="flex items-center gap-4 text-xs font-mono text-slate-400 border-t border-slate-100 dark:border-slate-800 pt-3">
+                    <span id="pvm-date"></span>
+                    <span id="pvm-size"></span>
+                </div>
+                <!-- Ad Box -->
+                <div class="w-full rounded-xl overflow-hidden bg-slate-800 border border-slate-700" style="min-height:80px">
+                    <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-5565071752876543" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                <!-- Download Button -->
+                <button id="pvm-dl-btn" onclick="startPvmTimer()" class="w-full bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white font-bold py-4 rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-cloud-arrow-down text-xl"></i>
+                    <span>Download v<span id="pvm-ver-label"></span></span>
+                </button>
+                <p class="text-xs text-center text-slate-400"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Older versions may be less stable. DWYOR.</p>
+            </div>
+        </div>
+    </div>
 
     <footer class="bg-darkcard border-t border-slate-800 py-10 mt-auto">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -684,30 +732,68 @@
             },
             {
                 id: 'TianYun',
-                title: 'TianYun狗',
-                version: '6.5',
+                title: 'TianYunGou',
+                version: '7.0',
                 type: 'Module',
                 tags: ['NonRoot', 'AxManager', 'Root', 'module'],
                 status: 'Latest release',
-                date: 'Mar 13 2026',
+                date: 'Apr 4, 2026',
                 bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/c20f88209656435.679fbaa9d9feb.png',
-                shortDesc: 'TianYun狗 — Game Performance Booster Module untuk Magisk / KernelSU / AXManager',
+                shortDesc: 'TianYunGou v7.0 — Game Performance Booster Module with advanced kernel-level tweaks. Supports Magisk / KernelSU / APatche / AXManager (Non-Root).',
                 icon: 'fa-gamepad',
                 developer: 'Java_nih_deks',
                 compatibility: [
-                    { label: 'Android 8.0+',       supported: true  },
-                    { label: 'Root Support',        supported: true  },
-                    { label: 'Shizuku (Non-Root)',  supported: true  },
-                    { label: 'ARM & ARM64',         supported: true  },
-                    { label: 'x86 / x86_64',        supported: false },
+                    { label: 'Android 8.0+',           supported: true  },
+                    { label: 'Root (Magisk/KSU/Apatch)', supported: true  },
+                    { label: 'Non-Root (AXManager)',    supported: true  },
+                    { label: 'ARM & ARM64',             supported: true  },
+                    { label: 'x86 / x86_64',            supported: false },
                 ],
-                features: ['App Freeze Boost', 'Storage I/O boost', 'Refresh Rate Unlock(if your device support)', 'Auto detect Game', 'System Info'],
-                notes: [],
+                features: [
+                    'CPU Governor Control — tune scheduler for performance or battery',
+                    'Swappiness Tuning — control RAM/swap aggressiveness',
+                    'VM Dirty Ratio Tweak — optimize write-back behavior for smoother I/O',
+                    'LMK Boost (Low Memory Killer) — aggressively free background apps during gaming',
+                    'App Freeze Boost — freeze non-essential background processes',
+                    'Storage I/O Boost — speed up read/write throughput',
+                    'Refresh Rate Unlock (device-dependent)',
+                    'Auto-detect Game — automatically applies tweaks when game is launched',
+                    'System Info — real-time system stats display',
+                    'And more internal optimizations...'
+                ],
+                notes: [
+                    'Root users: reboot required after installation.',
+                    'Non-Root (AXManager): no reboot required.',
+                    'Apatch support is experimental — test thoroughly.'
+                ],
                 credits: [],
                 specialThanks: '',
-                install: ['Download TianYun.zip', 'Open AxManager/Ksu/Magisk', 'Go to modules and install from storage', 'select the zip file', 'if you root reboot required', 'Done'],
-                fileSize: '597.54KB',
-                downloadLink: 'https://www.mediafire.com/file/k8gfotzspl31i9r/TianYun%25E8%25BF%25AA%25E5%2585%258B.zip/file'
+                install: [
+                    'Download TianYunGou v7.0 zip.',
+                    'Open AxManager / KernelSU / Magisk / Apatch.',
+                    'Go to Modules → Install from Storage.',
+                    'Select the downloaded zip file.',
+                    'If using Root: reboot the device.',
+                    'Done — tweaks will apply automatically.'
+                ],
+                fileSize: '~600 KB',
+                downloadLink: 'https://www.mediafire.com/file/i5ff64502f4a5rc/TianYunV7.0.zip/file',
+                previousVersions: [
+                    {
+                        version: '6.5',
+                        date: 'Mar 13, 2026',
+                        fileSize: '597.54 KB',
+                        downloadLink: 'https://www.mediafire.com/file/k8gfotzspl31i9r/TianYun%25E8%25BF%25AA%25E5%2585%258B.zip/file',
+                        features: [
+                            'App Freeze Boost',
+                            'Storage I/O Boost',
+                            'Refresh Rate Unlock (device-dependent)',
+                            'Auto-detect Game',
+                            'System Info'
+                        ],
+                        description: 'TianYun狗 v6.5 — the previous stable release. Focused on game boost via app freeze and storage I/O tweaks. Compatible with AXManager, KernelSU, and Magisk.'
+                    }
+                ]
             },
 
             {
@@ -828,7 +914,7 @@
                             <p class="text-slate-500 dark:text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">${mod.shortDesc}</p>
                             <div class="flex flex-wrap gap-1 mb-4">${tagBadges}</div>
                             <div class="flex justify-between items-center mt-auto pt-3 border-t border-slate-100 dark:border-slate-800">
-                                <span class="text-xs font-mono font-medium text-slate-400">${mod.developer || 'Java_nih_deks'}</span>
+                                <span class="text-xs font-mono font-medium text-slate-400">${mod.developer || 'XJavaLab'}</span>
                                 <span class="text-primary text-sm font-bold flex items-center group-hover:translate-x-1 transition-transform">View Details <i class="fa-solid fa-arrow-right ml-1"></i></span>
                             </div>
                         </div>
@@ -964,7 +1050,7 @@
             document.getElementById('detail-version').textContent     = mod.version;
             document.getElementById('detail-date').textContent        = mod.date;
             document.getElementById('detail-desc').textContent        = mod.shortDesc;
-            document.getElementById('detail-developer').textContent   = mod.developer || 'Java_nih_deks';
+            document.getElementById('detail-developer').textContent   = mod.developer || 'XJavaLab';
             document.getElementById('detail-filesize').textContent    = mod.fileSize || 'N/A';
             document.getElementById('detail-dlcount').textContent     = dlCounts[mod.id] !== undefined
                 ? dlCounts[mod.id].toLocaleString() : '—';
@@ -1008,6 +1094,31 @@
                     <span class="${c.supported ? 'text-slate-700 dark:text-slate-300 font-medium' : 'text-slate-400 line-through'}">${c.label}</span>
                 </li>
             `).join('');
+
+            const pvContainer = document.getElementById('detail-prev-versions-container');
+            const pvList = document.getElementById('detail-prev-versions-list');
+            if (mod.previousVersions && mod.previousVersions.length > 0) {
+                pvContainer.classList.remove('hidden');
+                pvList.innerHTML = mod.previousVersions.map((pv, idx) => `
+                    <div class="bg-slate-50 dark:bg-slate-800/50 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 flex items-center justify-between gap-4 cursor-pointer hover:border-primary transition-all group"
+                         onclick="openPrevVerModal('${mod.id}', ${idx})">
+                        <div class="flex items-center gap-3">
+                            <div class="w-10 h-10 rounded-xl bg-slate-200 dark:bg-slate-700 flex items-center justify-center text-slate-500 dark:text-slate-300 flex-shrink-0 group-hover:bg-primary/10 group-hover:text-primary transition-all">
+                                <i class="fa-solid fa-box-archive text-sm"></i>
+                            </div>
+                            <div>
+                                <div class="font-bold text-slate-800 dark:text-slate-200 text-sm">v${pv.version}</div>
+                                <div class="text-xs text-slate-400 font-mono">${pv.date} · ${pv.fileSize}</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2 text-xs font-semibold text-slate-400 group-hover:text-primary transition-colors">
+                            View &amp; Download <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </div>
+                    </div>
+                `).join('');
+            } else {
+                pvContainer.classList.add('hidden');
+            }
 
             resetDownloadButton();
             showPage('detail');
@@ -1156,6 +1267,73 @@
                 showPage('home');
             }
         });
+
+        // ================= PREVIOUS VERSION MODAL =================
+        let pvmTimerInterval = null;
+        let pvmDownloadUrl = '';
+
+        function openPrevVerModal(modId, pvIdx) {
+            const mod = modulesData.find(m => m.id === modId);
+            if (!mod || !mod.previousVersions) return;
+            const pv = mod.previousVersions[pvIdx];
+            if (!pv) return;
+            pvmDownloadUrl = pv.downloadLink;
+            document.getElementById('pvm-title').textContent   = mod.title + ' v' + pv.version;
+            document.getElementById('pvm-desc').textContent    = pv.description || '';
+            document.getElementById('pvm-ver-label').textContent = pv.version;
+            document.getElementById('pvm-date').innerHTML      = '<i class="fa-solid fa-calendar mr-1"></i>' + pv.date;
+            document.getElementById('pvm-size').innerHTML      = '<i class="fa-solid fa-file mr-1"></i>' + pv.fileSize;
+            document.getElementById('pvm-features').innerHTML  = (pv.features || []).map(f =>
+                `<li class="flex items-start gap-2"><i class="fa-solid fa-check text-green-500 mt-0.5 flex-shrink-0 text-xs"></i><span>${f}</span></li>`
+            ).join('');
+            resetPvmButton();
+            document.getElementById('prev-ver-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePrevVerModal(e) {
+            if (e && e.currentTarget !== e.target) return;
+            if (pvmTimerInterval) clearInterval(pvmTimerInterval);
+            document.getElementById('prev-ver-modal').classList.add('hidden');
+            document.body.style.overflow = '';
+            resetPvmButton();
+        }
+
+        function resetPvmButton() {
+            if (pvmTimerInterval) clearInterval(pvmTimerInterval);
+            pvmTimerInterval = null;
+            const btn = document.getElementById('pvm-dl-btn');
+            if (!btn) return;
+            btn.disabled = false;
+            btn.classList.remove('opacity-70', 'cursor-not-allowed');
+            const verLabel = document.getElementById('pvm-ver-label') ? document.getElementById('pvm-ver-label').textContent : '';
+            btn.innerHTML = `<i class="fa-solid fa-cloud-arrow-down text-xl"></i> <span>Download v${verLabel}</span>`;
+        }
+
+        function startPvmTimer() {
+            const btn = document.getElementById('pvm-dl-btn');
+            if (btn.disabled) return;
+            btn.disabled = true;
+            btn.classList.add('opacity-70', 'cursor-not-allowed');
+            let t = 15;
+            btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> <span class="font-mono text-lg ml-2">${t}s</span> <span class="ml-1 text-sm font-normal">Wait...</span>`;
+            pvmTimerInterval = setInterval(() => {
+                t--;
+                if (t <= 0) {
+                    clearInterval(pvmTimerInterval);
+                    pvmTimerInterval = null;
+                    btn.innerHTML = `<i class="fa-solid fa-check-double text-xl"></i> <span class="ml-2">Redirecting...</span>`;
+                    window.location.href = pvmDownloadUrl;
+                    setTimeout(() => {
+                        document.getElementById('prev-ver-modal').classList.add('hidden');
+                        document.body.style.overflow = '';
+                        resetPvmButton();
+                    }, 2000);
+                } else {
+                    btn.innerHTML = `<i class="fa-solid fa-circle-notch fa-spin text-xl"></i> <span class="font-mono text-lg ml-2">${t}s</span> <span class="ml-1 text-sm font-normal">Wait...</span>`;
+                }
+            }, 1000);
+        }
     </script>
 </body>
 </html>
