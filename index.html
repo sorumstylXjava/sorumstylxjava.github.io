@@ -589,275 +589,460 @@
 
     <script>
        const modulesData = [
-            {
-                id: 'xiantian-pro-83',
-                title: 'XianTian Pro',
-                version: 'v8.4',
-                type: 'App',
-                tags: ['root', 'nonRoot'],
-                status: 'Latest Release',
-                date: 'Mar 25, 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260404_170851_003.jpg',
-                shortDesc: 'Advanced performance application for Android system optimization. Supports both Root and Non-Root execution via Shizuku / KernelSU / Magisk. App Version 2.3.',
-                icon: 'fa-microchip',
-                compatibility: [
-                    { label: 'Android 8.0+',              supported: true  },
-                    { label: 'Root (Magisk / KernelSU)',   supported: true  },
-                    { label: 'Non-Root via Shizuku',       supported: true  },
-                    { label: 'ARM & ARM64',                supported: true  },
-                    { label: 'x86 / x86_64',               supported: false }
-                ],
-                features: [
-                    'Featured & Bug Fixes',
-                    'Fix: Game not detected issue',
-                    'Fix: Preload behavior',
-                    'Add: Advanced Kernel Tweaks',
-                    'Add: Setting — Swappiness',
-                    'Add: Setting — Cache Pressure',
-                    'Add: Setting — Page Cluster',
-                    'Add: Setting — Dirty Ratio',
-                    'Add: Setting — Read Ahead',
-                    'Add: Setting — I/O Scheduler',
-                    'Add: Setting — TCP Congestion Control',
-                    'Add: Card Battery',
-                    'Add: Card Memory & Management',
-                    'Add: Running Background Apps',
-                    'Add: DexOpt'
-                ],
-                notes: [
-                    'Non-root features accessible via Shizuku inside AppProfile.',
-                    'GameBoost tab contains additional Non-Root options.',
-                    'Kernel tweaks require Root (Magisk/KernelSU).'
-                ],
-                credits: [],
-                specialThanks: '',
-                developer: 'Java_nih_deks',
-                install: [
-                    'Download the APK from the release link below.',
-                    'Install the APK on your Android device.',
-                    'Connect via Shizuku (Non-Root) or grant Superuser permission (Root/KernelSU).',
-                    'Open the app, apply your preferred tweaks, and enjoy.'
-                ],
-                fileSize: '~7 MB',
-                downloadLink: 'https://www.mediafire.com/file/q4a8iebxhe9ri9f/JavaPro1.apk/file',
-                previousVersions: [
-                    {
-                        version: '8.3',
-                        date: 'Mar 11, 2026',
-                        fileSize: '6.08 MB',
-                        downloadLink: 'https://www.mediafire.com/file/4g9vwen8jzppupn/JavaPro-Release-22727308226.zip/file',
-                        description: 'XianTian Pro v8.3 — previous stable release. Full performance suite with Shizuku support, GameBoost, FPS Monitor, and more.',
-                        features: [
-                            'FPS Monitor (Root)',
-                            'CPU Info & Performance Profile',
-                            'Non-Root Support via Shizuku',
-                            'Downscale (Root & Non-Root)',
-                            'Graphics Driver Override',
-                            'Reduce Logging & Tracing',
-                            'Preload Manager',
-                            'Smart Cache Cleaner',
-                            'Touch Responsiveness Boost',
-                            'Background App Killer',
-                            'GPU 2D Render Mode',
-                            'Scale Animation Control',
-                            'Disable Thermal Throttle',
-                            'IO Scheduler Tuning',
-                            'VM Memory Tweak',
-                            'Aggressive LMK',
-                            'TCP Low Latency',
-                            'Lock FPS',
-                            'GameBoost Tab'
-                        ]
-                    }
-                ]
-            },
-            {
-                id: 'RenderUI',
-                title: 'RenderUI',
-                version: 'v1.0',
-                type: 'Module',
-                tags: ['module', 'root'],
-                status: 'New Release',
-                date: 'Mar 11, 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/df8830209656435.6793ae5005fc9.webp',
-                shortDesc: 'Advanced performance module for Android system optimization. Supports both Root and Non-Root.',
-                icon: 'fa-layer-group',
-                compatibility: [
-                    { label: 'Android 8.0+',      supported: true  },
-                    { label: 'Root Support',       supported: true  },
-                    { label: 'Shizuku (Non-Root)', supported: true  },
-                    { label: 'ARM & ARM64',        supported: true  },
-                    { label: 'x86 / x86_64',       supported: false }
-                ],
-                features: ['Smooth rendering on rooted and non-rooted devices'],
-                notes: [],
-                credits: [],
-                specialThanks: '',
-                developer: 'Java_nih_deks',
-                install: [
-                    'Download the module file.',
-                    'Open Magisk / KernelSU, select Install from Storage.',
-                    'Select the downloaded module file and wait until finished.',
-                    'Root users: reboot the device. Non-root users: apply directly.'
-                ],
-                fileSize: '10.72 KB',
-                downloadLink: 'https://www.mediafire.com/file/gucgom41r6ofmpv/RenderUI-1.zip/file'
-            },
-            {
-                id: 'bleble-potion',
-                title: 'Bleble Potion',
-                version: '1.8',
-                type: 'Module',
-                tags: ['nonRoot', 'AxManager', 'module'],
-                status: 'Latest Release',
-                date: 'Mar 11, 2026',
-                bannerImg: 'https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d8a9e2209656435.6735af787aa28.png',
-                shortDesc: 'A plugin module containing a suite of tweak tools — disable tracing, stop logging, stop profiling, and setprop tweaks for performance improvement.',
-                icon: 'fa-rocket',
-                developer: '@AduhaiWelewele',
-                compatibility: [
-                    { label: 'Android 8.0+',      supported: true  },
-                    { label: 'Root Support',       supported: true  },
-                    { label: 'Shizuku (Non-Root)', supported: true  },
-                    { label: 'ARM & ARM64',        supported: true  },
-                    { label: 'x86 / x86_64',       supported: false }
-                ],
-                features: ['Downscale CLI', 'Disable Tracing', 'Minimize Logging', 'SurfaceFlinger Realtime Performance'],
-                notes: [],
-                credits: [],
-                specialThanks: '',
-                install: [
-                    'Download the module file.',
-                    'Open AxManager, then select Install from Storage.',
-                    'Wait for flashing to complete.'
-                ],
-                fileSize: '24.5 KB',
-                downloadLink: 'https://drive.google.com/drive/folders/1wNVs5ImjlrsAJ_VPfVsDXWwbzcW1oZW2'
-            },
-            {
-                id: 'M412Cat',
-                title: 'Utensil Poker',
-                version: 'Stable',
-                type: 'Module',
-                tags: ['nonRoot', 'AxManager', 'module'],
-                status: 'Stable Release',
-                date: 'Mar 11, 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260311_222509_916.jpg',
-                shortDesc: 'A lightweight module designed to intelligently trigger Power Saver mode based on system conditions, helping extend battery life.',
-                icon: 'fa-gear',
-                developer: '@Dcx400',
-                compatibility: [
-                    { label: 'Android 8.0+',      supported: true  },
-                    { label: 'Root Support',       supported: true  },
-                    { label: 'Shizuku (Non-Root)', supported: true  },
-                    { label: 'ARM & ARM64',        supported: true  },
-                    { label: 'x86 / x86_64',       supported: false }
-                ],
-                features: ['Intelligent Power Saver Trigger', 'Battery Life Extension'],
-                notes: [],
-                credits: [],
-                specialThanks: '',
-                install: [
-                    'Download the module file.',
-                    'Open AxManager, then select Install from Storage.',
-                    'Wait until the flashing process is complete.'
-                ],
-                fileSize: '8.1 KB',
-                downloadLink: 'https://t.me/archiverdcx/127'
-            },
-            {
-                id: 'TianYun',
-                title: 'TianYunGou',
-                version: '7.0',
-                type: 'Module',
-                tags: ['NonRoot', 'AxManager', 'Root', 'module'],
-                status: 'Latest release',
-                date: 'Apr 4, 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/c20f88209656435.679fbaa9d9feb.png',
-                shortDesc: 'TianYunGou v7.0 — Game Performance Booster Module with advanced kernel-level tweaks. Supports Magisk / KernelSU / APatche / AXManager (Non-Root).',
-                icon: 'fa-gamepad',
-                developer: 'Java_nih_deks',
-                compatibility: [
-                    { label: 'Android 8.0+',           supported: true  },
-                    { label: 'Root (Magisk/KSU/Apatch)', supported: true  },
-                    { label: 'Non-Root (AXManager)',    supported: true  },
-                    { label: 'ARM & ARM64',             supported: true  },
-                    { label: 'x86 / x86_64',            supported: false },
-                ],
-                features: [
-                    'CPU Governor Control — tune scheduler for performance or battery',
-                    'Swappiness Tuning — control RAM/swap aggressiveness',
-                    'VM Dirty Ratio Tweak — optimize write-back behavior for smoother I/O',
-                    'LMK Boost (Low Memory Killer) — aggressively free background apps during gaming',
-                    'App Freeze Boost — freeze non-essential background processes',
-                    'Storage I/O Boost — speed up read/write throughput',
-                    'Refresh Rate Unlock (device-dependent)',
-                    'Auto-detect Game — automatically applies tweaks when game is launched',
-                    'System Info — real-time system stats display',
-                    'And more internal optimizations...'
-                ],
-                notes: [
-                    'Root users: reboot required after installation.',
-                    'Non-Root (AXManager): no reboot required.',
-                    'Apatch support is experimental — test thoroughly.'
-                ],
-                credits: [],
-                specialThanks: '',
-                install: [
-                    'Download TianYunGou v7.0 zip.',
-                    'Open AxManager / KernelSU / Magisk / Apatch.',
-                    'Go to Modules → Install from Storage.',
-                    'Select the downloaded zip file.',
-                    'If using Root: reboot the device.',
-                    'Done — tweaks will apply automatically.'
-                ],
-                fileSize: '~600 KB',
-                downloadLink: 'https://www.mediafire.com/file/i5ff64502f4a5rc/TianYunV7.0.zip/file',
-                previousVersions: [
-                    {
-                        version: '6.5',
-                        date: 'Mar 13, 2026',
-                        fileSize: '597.54 KB',
-                        downloadLink: 'https://www.mediafire.com/file/k8gfotzspl31i9r/TianYun%25E8%25BF%25AA%25E5%2585%258B.zip/file',
-                        features: [
-                            'App Freeze Boost',
-                            'Storage I/O Boost',
-                            'Refresh Rate Unlock (device-dependent)',
-                            'Auto-detect Game',
-                            'System Info'
-                        ],
-                        description: 'TianYun狗 v6.5 — the previous stable release. Focused on game boost via app freeze and storage I/O tweaks. Compatible with AXManager, KernelSU, and Magisk.'
-                    }
-                ]
-            },
-
-            {
-                id: 'chargeer_control',
-                title: 'ChargerControl',
-                version: '2.0',
-                type: 'App',
-                tags: ['Root', 'app'],
-                status: 'New Release',
-                date: 'Mar 17 2026',
-                bannerImg: 'https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/43404fbcddfc274c5e795e78abba678e.png',
-                shortDesc: 'simple application for control your battery',
-                icon: 'fa-gear',
-                developer: 'Java_nih_deks',
-                compatibility: [
-                    { label: 'Android 8.0+',       supported: true  },
-                    { label: 'Root Support',        supported: true  },
-                    { label: 'Shizuku (Non-Root)',  supported: true  },
-                    { label: 'ARM & ARM64',         supported: true  },
-                    { label: 'x86 / x86_64',        supported: false },
-                ],
-                features: ['limit charging', 'Bypass mode (not bypass charging!!)', 'and another features'],
-                notes: [],
-                credits: [],
-                specialThanks: '',
-                install: ['Download application', 'Install application', 'Grand root to the application', 'Done'],
-                downloadLink: 'https://www.mediafire.com/file/sa3gbt7f98yn3t4/app-release.apk/file',
-                fileSize: '1.50 MB'
-            },
+          {
+                    "id": "xyloos-14700",
+                    "title": "XyloOS (微調整)",
+                    "version": "v1.6",
+                    "type": "Module",
+                    "tags": [
+                              "Root",
+                              "NonRoot",
+                              "module",
+                              "AxManager"
+                    ],
+                    "status": "New Release",
+                    "date": "Apr 9, 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/HexXylo/XyloOS-/main/banner.png",
+                    "shortDesc": "AxManager plugin that optimizes refresh rate, network, touch response, and battery for gaming.",
+                    "icon": "fa-microchip",
+                    "developer": "@hexxylo",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root (Magisk / KernelSU)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Non-Root ",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "✨ XyloOS Features  Gaming Mode (Auto)  · 120Hz  refresh rate lock (Spoof) · Network optimization (Cloudflare DNS, captive portal off) · Touch Enhancer (low latency, fast response) · Speed profile compilation for detected game · CPU governor set to performance (root) · HWUI renderer skiagl · SurfaceFlinger tweaks · Thermal performance mode (48°C throttle)  Idle Mode (Auto)  · 60Hz refresh rate · Cooling tweaks (thermal throttle) · Battery optimizations (logging off, tracing off) · Animation scale 0.5 · Haptic feedback off · CPU governor powersave (root)  Game Detection  · pidof method · Checks every 5 seconds when gaming · Checks every 30 seconds when idle  Compilation  · Auto compile detected game with speed-profile · Runs before gaming mode tweaks · Android 14+ uses PRIORITY_INTERACTIVE_FAST",
+                              "📜 Changelog  Version 1.6  · Added Touch Enhancer tweaks · Added network optimizations for gaming · Added cooling tweaks for idle mode · Added speed profile compilation · Added device support · Removed all app killing commands · Fixed game detection using pidof only · Fixed action.sh status display"
+                    ],
+                    "notes": [],
+                    "credits": [],
+                    "specialThanks": "",
+                    "install": [
+                              "Download the file.",
+                              "Flash via Magisk / KernelSU atau AxManager.",
+                              "Reboot jika diperlukan."
+                    ],
+                    "fileSize": "2.7 MB",
+                    "downloadLink": "https://www.mediafire.com/file/tyj41wi5b4nsl69/XyloOS+(微調整)+1.6.zip/file",
+                    "previousVersions": []
+          },
+          {
+                    "id": "xiantian-pro-83",
+                    "title": "XianTian Pro",
+                    "version": "v8.4",
+                    "type": "App",
+                    "tags": [
+                              "root",
+                              "nonRoot"
+                    ],
+                    "status": "Latest Release",
+                    "date": "Mar 25, 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260404_170851_003.jpg",
+                    "shortDesc": "Advanced performance application for Android system optimization. Supports both Root and Non-Root execution via Shizuku / KernelSU / Magisk. App Version 2.3.",
+                    "icon": "fa-microchip",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root (Magisk / KernelSU)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Non-Root via Shizuku",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "Featured & Bug Fixes",
+                              "Fix: Game not detected issue",
+                              "Fix: Preload behavior",
+                              "Add: Advanced Kernel Tweaks",
+                              "Add: Setting — Swappiness",
+                              "Add: Setting — Cache Pressure",
+                              "Add: Setting — Page Cluster",
+                              "Add: Setting — Dirty Ratio",
+                              "Add: Setting — Read Ahead",
+                              "Add: Setting — I/O Scheduler",
+                              "Add: Setting — TCP Congestion Control",
+                              "Add: Card Battery",
+                              "Add: Card Memory & Management",
+                              "Add: Running Background Apps",
+                              "Add: DexOpt"
+                    ],
+                    "notes": [
+                              "Non-root features accessible via Shizuku inside AppProfile.",
+                              "GameBoost tab contains additional Non-Root options.",
+                              "Kernel tweaks require Root (Magisk/KernelSU)."
+                    ],
+                    "credits": [],
+                    "specialThanks": "",
+                    "developer": "Java_nih_deks",
+                    "install": [
+                              "Download the APK from the release link below.",
+                              "Install the APK on your Android device.",
+                              "Connect via Shizuku (Non-Root) or grant Superuser permission (Root/KernelSU).",
+                              "Open the app, apply your preferred tweaks, and enjoy."
+                    ],
+                    "fileSize": "~7 MB",
+                    "downloadLink": "https://www.mediafire.com/file/q4a8iebxhe9ri9f/JavaPro1.apk/file",
+                    "previousVersions": [
+                              {
+                                        "version": "8.3",
+                                        "date": "Mar 11, 2026",
+                                        "fileSize": "6.08 MB",
+                                        "downloadLink": "https://www.mediafire.com/file/4g9vwen8jzppupn/JavaPro-Release-22727308226.zip/file",
+                                        "description": "XianTian Pro v8.3 — previous stable release. Full performance suite with Shizuku support, GameBoost, FPS Monitor, and more.",
+                                        "features": [
+                                                  "FPS Monitor (Root)",
+                                                  "CPU Info & Performance Profile",
+                                                  "Non-Root Support via Shizuku",
+                                                  "Downscale (Root & Non-Root)",
+                                                  "Graphics Driver Override",
+                                                  "Reduce Logging & Tracing",
+                                                  "Preload Manager",
+                                                  "Smart Cache Cleaner",
+                                                  "Touch Responsiveness Boost",
+                                                  "Background App Killer",
+                                                  "GPU 2D Render Mode",
+                                                  "Scale Animation Control",
+                                                  "Disable Thermal Throttle",
+                                                  "IO Scheduler Tuning",
+                                                  "VM Memory Tweak",
+                                                  "Aggressive LMK",
+                                                  "TCP Low Latency",
+                                                  "Lock FPS",
+                                                  "GameBoost Tab"
+                                        ]
+                              }
+                    ]
+          },
+          {
+                    "id": "RenderUI",
+                    "title": "RenderUI",
+                    "version": "v1.0",
+                    "type": "Module",
+                    "tags": [
+                              "module",
+                              "root"
+                    ],
+                    "status": "New Release",
+                    "date": "Mar 11, 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/df8830209656435.6793ae5005fc9.webp",
+                    "shortDesc": "Advanced performance module for Android system optimization. Supports both Root and Non-Root.",
+                    "icon": "fa-layer-group",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root Support",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Shizuku (Non-Root)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "Smooth rendering on rooted and non-rooted devices"
+                    ],
+                    "notes": [],
+                    "credits": [],
+                    "specialThanks": "",
+                    "developer": "Java_nih_deks",
+                    "install": [
+                              "Download the module file.",
+                              "Open Magisk / KernelSU, select Install from Storage.",
+                              "Select the downloaded module file and wait until finished.",
+                              "Root users: reboot the device. Non-root users: apply directly."
+                    ],
+                    "fileSize": "10.72 KB",
+                    "downloadLink": "https://www.mediafire.com/file/gucgom41r6ofmpv/RenderUI-1.zip/file"
+          },
+          {
+                    "id": "bleble-potion",
+                    "title": "Bleble Potion",
+                    "version": "1.8",
+                    "type": "Module",
+                    "tags": [
+                              "nonRoot",
+                              "AxManager",
+                              "module"
+                    ],
+                    "status": "Latest Release",
+                    "date": "Mar 11, 2026",
+                    "bannerImg": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/d8a9e2209656435.6735af787aa28.png",
+                    "shortDesc": "A plugin module containing a suite of tweak tools — disable tracing, stop logging, stop profiling, and setprop tweaks for performance improvement.",
+                    "icon": "fa-rocket",
+                    "developer": "@AduhaiWelewele",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root Support",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Shizuku (Non-Root)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "Downscale CLI",
+                              "Disable Tracing",
+                              "Minimize Logging",
+                              "SurfaceFlinger Realtime Performance"
+                    ],
+                    "notes": [],
+                    "credits": [],
+                    "specialThanks": "",
+                    "install": [
+                              "Download the module file.",
+                              "Open AxManager, then select Install from Storage.",
+                              "Wait for flashing to complete."
+                    ],
+                    "fileSize": "24.5 KB",
+                    "downloadLink": "https://drive.google.com/drive/folders/1wNVs5ImjlrsAJ_VPfVsDXWwbzcW1oZW2"
+          },
+          {
+                    "id": "M412Cat",
+                    "title": "Utensil Poker",
+                    "version": "Stable",
+                    "type": "Module",
+                    "tags": [
+                              "nonRoot",
+                              "AxManager",
+                              "module"
+                    ],
+                    "status": "Stable Release",
+                    "date": "Mar 11, 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/IMG_20260311_222509_916.jpg",
+                    "shortDesc": "A lightweight module designed to intelligently trigger Power Saver mode based on system conditions, helping extend battery life.",
+                    "icon": "fa-gear",
+                    "developer": "@Dcx400",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root Support",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Shizuku (Non-Root)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "Intelligent Power Saver Trigger",
+                              "Battery Life Extension"
+                    ],
+                    "notes": [],
+                    "credits": [],
+                    "specialThanks": "",
+                    "install": [
+                              "Download the module file.",
+                              "Open AxManager, then select Install from Storage.",
+                              "Wait until the flashing process is complete."
+                    ],
+                    "fileSize": "8.1 KB",
+                    "downloadLink": "https://t.me/archiverdcx/127"
+          },
+          {
+                    "id": "TianYun",
+                    "title": "TianYunGou",
+                    "version": "7.0",
+                    "type": "Module",
+                    "tags": [
+                              "NonRoot",
+                              "AxManager",
+                              "Root",
+                              "module"
+                    ],
+                    "status": "Latest release",
+                    "date": "Apr 4, 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/c20f88209656435.679fbaa9d9feb.png",
+                    "shortDesc": "TianYunGou v7.0 — Game Performance Booster Module with advanced kernel-level tweaks. Supports Magisk / KernelSU / APatche / AXManager (Non-Root).",
+                    "icon": "fa-gamepad",
+                    "developer": "Java_nih_deks",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root (Magisk/KSU/Apatch)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Non-Root (AXManager)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "CPU Governor Control — tune scheduler for performance or battery",
+                              "Swappiness Tuning — control RAM/swap aggressiveness",
+                              "VM Dirty Ratio Tweak — optimize write-back behavior for smoother I/O",
+                              "LMK Boost (Low Memory Killer) — aggressively free background apps during gaming",
+                              "App Freeze Boost — freeze non-essential background processes",
+                              "Storage I/O Boost — speed up read/write throughput",
+                              "Refresh Rate Unlock (device-dependent)",
+                              "Auto-detect Game — automatically applies tweaks when game is launched",
+                              "System Info — real-time system stats display",
+                              "And more internal optimizations..."
+                    ],
+                    "notes": [
+                              "Root users: reboot required after installation.",
+                              "Non-Root (AXManager): no reboot required.",
+                              "Apatch support is experimental — test thoroughly."
+                    ],
+                    "credits": [],
+                    "specialThanks": "",
+                    "install": [
+                              "Download TianYunGou v7.0 zip.",
+                              "Open AxManager / KernelSU / Magisk / Apatch.",
+                              "Go to Modules → Install from Storage.",
+                              "Select the downloaded zip file.",
+                              "If using Root: reboot the device.",
+                              "Done — tweaks will apply automatically."
+                    ],
+                    "fileSize": "~600 KB",
+                    "downloadLink": "https://www.mediafire.com/file/i5ff64502f4a5rc/TianYunV7.0.zip/file",
+                    "previousVersions": [
+                              {
+                                        "version": "6.5",
+                                        "date": "Mar 13, 2026",
+                                        "fileSize": "597.54 KB",
+                                        "downloadLink": "https://www.mediafire.com/file/k8gfotzspl31i9r/TianYun%25E8%25BF%25AA%25E5%2585%258B.zip/file",
+                                        "features": [
+                                                  "App Freeze Boost",
+                                                  "Storage I/O Boost",
+                                                  "Refresh Rate Unlock (device-dependent)",
+                                                  "Auto-detect Game",
+                                                  "System Info"
+                                        ],
+                                        "description": "TianYun狗 v6.5 — the previous stable release. Focused on game boost via app freeze and storage I/O tweaks. Compatible with AXManager, KernelSU, and Magisk."
+                              }
+                    ]
+          },
+          {
+                    "id": "chargeer_control",
+                    "title": "ChargerControl",
+                    "version": "2.0",
+                    "type": "App",
+                    "tags": [
+                              "Root",
+                              "app"
+                    ],
+                    "status": "New Release",
+                    "date": "Mar 17 2026",
+                    "bannerImg": "https://raw.githubusercontent.com/sorumstylXjava/Bug/refs/heads/main/43404fbcddfc274c5e795e78abba678e.png",
+                    "shortDesc": "simple application for control your battery",
+                    "icon": "fa-gear",
+                    "developer": "Java_nih_deks",
+                    "compatibility": [
+                              {
+                                        "label": "Android 8.0+",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Root Support",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "Shizuku (Non-Root)",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "ARM & ARM64",
+                                        "supported": true
+                              },
+                              {
+                                        "label": "x86 / x86_64",
+                                        "supported": false
+                              }
+                    ],
+                    "features": [
+                              "limit charging",
+                              "Bypass mode (not bypass charging!!)",
+                              "and another features"
+                    ],
+                    "notes": [],
+                    "credits": [],
+                    "specialThanks": "",
+                    "install": [
+                              "Download application",
+                              "Install application",
+                              "Grand root to the application",
+                              "Done"
+                    ],
+                    "downloadLink": "https://www.mediafire.com/file/sa3gbt7f98yn3t4/app-release.apk/file",
+                    "fileSize": "1.50 MB"
+          }
 ];
 
         const faqs = [
