@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PV8JQ0RP4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3PV8JQ0RP4');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ — XJavaLab</title>
+    <meta name="description" content="Frequently asked questions about XJavaLab Android modules, root vs non-root, Shizuku setup, and installation guides.">
+    <meta name="author" content="XJavaLab">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sorumstylxjava.github.io/faq.html">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sorumstylxjava.github.io/faq.html">
+    <meta property="og:title" content="FAQ — XJavaLab">
+    <meta property="og:description" content="Frequently asked questions about XJavaLab Android modules and tools.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5565071752876543" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: '#3b82f6',
+                        secondary: '#8b5cf6',
+                        darkbg: '#0f172a',
+                        darkcard: '#1e293b',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: #475569; border-radius: 4px; }
+        .glass-nav {
+            background: rgba(15, 23, 42, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .fade-in { animation: fadeIn 0.4s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease;
+        }
+        .faq-answer.open {
+            max-height: 400px;
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-slate-100 font-sans antialiased selection:bg-primary selection:text-white min-h-screen flex flex-col">
+
+    <!-- ===== NAVBAR ===== -->
+    <nav class="fixed w-full z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="index.html" class="flex items-center gap-2 flex-shrink-0">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white shadow-lg">
+                        <i class="fa-solid fa-microchip text-sm"></i>
+                    </div>
+                    <span class="text-lg font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary hidden sm:block tracking-tight">XJavaLab</span>
+                </a>
+                <div class="hidden md:flex items-center gap-1">
+                    <a href="index.html"  class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-primary hover:bg-slate-800 transition-all">Home</a>
+                    <a href="articles/magisk-vs-kernelsu.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-primary hover:bg-slate-800 transition-all">Articles</a>
+                    <a href="about.html"  class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-primary hover:bg-slate-800 transition-all">About</a>
+                    <a href="faq.html"    class="px-4 py-2 rounded-lg text-sm font-semibold text-primary bg-slate-800 transition-all">FAQ</a>
+                    <a href="privacy.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-primary hover:bg-slate-800 transition-all">Privacy</a>
+                    <a href="contact.html" class="px-4 py-2 rounded-lg text-sm font-semibold text-slate-400 hover:text-primary hover:bg-slate-800 transition-all">Contact</a>
+                </div>
+                <a href="https://t.me/Java_diks" target="_blank" rel="noopener noreferrer"
+                   class="flex items-center gap-2 px-3 py-2 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-400 text-sm font-semibold hover:bg-blue-500/20 transition-all">
+                    <i class="fa-brands fa-telegram"></i>
+                    <span class="hidden lg:inline">Telegram</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== MAIN ===== -->
+    <main class="flex-1 pt-28 pb-16 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto w-full fade-in">
+
+        <h1 class="text-4xl font-extrabold mb-3 text-center text-white">Frequently Asked Questions</h1>
+        <p class="text-center text-slate-400 mb-10 text-sm">Can't find what you need? Reach us on <a href="contact.html" class="text-primary hover:underline">the Contact page</a>.</p>
+
+        <div class="space-y-4 mb-10">
+
+            <!-- FAQ Item 1 -->
+            <div class="bg-darkcard rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+                <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    What is the difference between Root (Magisk) and Non-Root (Shizuku)?
+                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 ml-4">
+                        <i class="fa-solid fa-plus text-primary transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p class="px-6 pb-6 text-slate-300 leading-relaxed text-sm">
+                        Root modules modify the system deeply at the kernel/system partition level — this requires an unlocked bootloader. Shizuku works via ADB permissions, which is safer and doesn't require rooting your device. Use Root if you want the deepest system access; use Shizuku/Non-Root for a safer, easier approach.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 2 -->
+            <div class="bg-darkcard rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+                <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    Will these modules cause a bootloop?
+                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 ml-4">
+                        <i class="fa-solid fa-plus text-primary transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p class="px-6 pb-6 text-slate-300 leading-relaxed text-sm">
+                        Any system modification carries a risk of bootloop. Please read the compatibility list on each module's detail page carefully before flashing. If you use Magisk, make sure you know how to use Safe Mode to disable modules in case something goes wrong. Always back up your data before flashing.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 3 -->
+            <div class="bg-darkcard rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+                <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    How do I install via Shizuku?
+                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 ml-4">
+                        <i class="fa-solid fa-plus text-primary transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p class="px-6 pb-6 text-slate-300 leading-relaxed text-sm">
+                        Install the Shizuku app from the Play Store. Enable Wireless Debugging in Developer Options, pair your device, and start the Shizuku service. Then grant access to the tweak apps downloaded from this site. For a detailed walkthrough, check out our 
+                        <a href="articles/shizuku-setup.html" class="text-primary hover:underline font-medium">Shizuku Setup Guide</a>.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 4 -->
+            <div class="bg-darkcard rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+                <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    Are these tools safe to use?
+                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 ml-4">
+                        <i class="fa-solid fa-plus text-primary transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p class="px-6 pb-6 text-slate-300 leading-relaxed text-sm">
+                        All tools and modules are tested before release. However, they modify system behavior and are provided as-is. Read each module's description carefully, understand what it does, and only apply tweaks you are comfortable with. We always recommend doing a backup before applying any modifications.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ Item 5 -->
+            <div class="bg-darkcard rounded-2xl border border-slate-700 overflow-hidden shadow-sm">
+                <button class="w-full px-6 py-5 text-left font-bold text-white flex justify-between items-center focus:outline-none" onclick="toggleFaq(this)">
+                    How do I report a bug or request a feature?
+                    <div class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center flex-shrink-0 ml-4">
+                        <i class="fa-solid fa-plus text-primary transition-transform duration-300"></i>
+                    </div>
+                </button>
+                <div class="faq-answer">
+                    <p class="px-6 pb-6 text-slate-300 leading-relaxed text-sm">
+                        The best way to report a bug or request a feature is through our Telegram channels. Send a direct message to <a href="https://t.me/Java_nih_deks" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">@Java_nih_deks</a> or follow the announcement channel at <a href="https://t.me/Java_diks" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline">@Java_diks</a>. Please include your device model, Android version, and a description of the issue.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- AdSense -->
+        <div class="w-full rounded-2xl overflow-hidden bg-darkcard border border-dashed border-slate-700 mb-8" style="min-height:90px">
+            <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-5565071752876543" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <div class="text-center">
+            <a href="index.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border border-slate-600 text-slate-300 text-sm font-bold hover:border-primary hover:text-primary transition-all">
+                <i class="fa-solid fa-arrow-left"></i> Back to Releases
+            </a>
+        </div>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="bg-darkcard border-t border-slate-800 py-10 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="flex items-center gap-3">
+                    <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-primary to-secondary flex items-center justify-center text-white shadow">
+                        <i class="fa-solid fa-microchip text-sm"></i>
+                    </div>
+                    <div>
+                        <div class="font-extrabold text-white tracking-tight">XJavaLab</div>
+                        <div class="text-xs text-slate-500">Android System Tools</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-4 text-sm text-slate-400">
+                    <a href="about.html"   class="hover:text-primary transition-colors font-medium">About</a>
+                    <a href="articles/magisk-vs-kernelsu.html" class="hover:text-primary transition-colors font-medium">Articles</a>
+                    <a href="faq.html"     class="hover:text-primary transition-colors font-medium">FAQ</a>
+                    <a href="privacy.html" class="hover:text-primary transition-colors font-medium">Privacy</a>
+                    <a href="contact.html" class="hover:text-primary transition-colors font-medium">Contact</a>
+                    <a href="https://t.me/Java_diks" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-blue-400 transition-colors font-medium">
+                        <i class="fa-brands fa-telegram"></i> Telegram
+                    </a>
+                    <a href="https://github.com/sorumstylXjava" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-white transition-colors font-medium">
+                        <i class="fa-brands fa-github"></i> GitHub
+                    </a>
+                </div>
+                <p class="text-slate-600 text-xs">&copy; 2026 XJavaLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFaq(btn) {
+            const answer = btn.nextElementSibling;
+            const icon = btn.querySelector('i');
+            const isOpen = answer.classList.contains('open');
+
+            // Close all
+            document.querySelectorAll('.faq-answer.open').forEach(el => {
+                el.classList.remove('open');
+                el.previousElementSibling.querySelector('i').classList.remove('fa-xmark', 'rotate-45');
+                el.previousElementSibling.querySelector('i').classList.add('fa-plus');
+            });
+
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-xmark', 'rotate-45');
+            }
+        }
+    </script>
+
+</body>
+</html>
