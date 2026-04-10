@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Root vs Non-Root for Android Tweaking — Which One? — XJava Modules</title>
+    <meta name="description" content="A practical comparison of what you can and cannot do with each approach.">
+    <meta name="author" content="XJava Modules">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sorumstylxjava.github.io/root-vs-nonroot.html">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Root vs Non-Root for Android Tweaking — Which One? — XJava Modules">
+    <meta property="og:description" content="A practical comparison of what you can and cannot do with each approach.">
+    <meta property="og:url" content="https://sorumstylxjava.github.io/root-vs-nonroot.html">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3PV8JQ0RP4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-3PV8JQ0RP4');
+    </script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5565071752876543" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+        html{scroll-behavior:smooth;}
+        body{background:#0f172a;color:#f1f5f9;font-family:'Inter',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;}
+        a{text-decoration:none;color:inherit;}
+
+        /* NAV */
+        nav{position:sticky;top:0;z-index:99;background:rgba(15,23,42,0.92);border-bottom:1px solid #1e293b;backdrop-filter:blur(14px);padding:0 1rem;}
+        .nav-in{max-width:860px;margin:0 auto;height:60px;display:flex;align-items:center;justify-content:space-between;}
+        .nav-logo{display:flex;align-items:center;gap:10px;}
+        .nav-logo-icon{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:.85rem;}
+        .nav-logo-text{font-weight:800;font-size:1rem;background:linear-gradient(to right,#3b82f6,#8b5cf6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+        .nav-back{display:flex;align-items:center;gap:6px;font-size:.85rem;color:#64748b;transition:color .2s;}
+        .nav-back:hover{color:#3b82f6;}
+
+        /* WRAP */
+        .wrap{max-width:860px;margin:0 auto;padding:2.5rem 1rem 4rem;}
+
+        /* HEADER */
+        .art-header{margin-bottom:2rem;}
+        .art-cat{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#eab308;margin-bottom:.6rem;display:flex;align-items:center;gap:6px;}
+        .art-title{font-size:clamp(1.6rem,4vw,2.2rem);font-weight:800;color:#f1f5f9;line-height:1.25;margin-bottom:.75rem;}
+        .art-desc{color:#94a3b8;font-size:.95rem;line-height:1.65;}
+        .art-divider{border:none;border-top:1px solid #1e293b;margin:1.75rem 0;}
+
+        /* AD SLOT */
+        .ad-slot{background:#1e293b;border:1px dashed #334155;border-radius:12px;overflow:hidden;min-height:90px;margin:1.75rem 0;}
+
+        /* ARTICLE BODY */
+        .art-body p{color:#cbd5e1;font-size:.95rem;line-height:1.8;margin-bottom:1.1rem;}
+        .art-body h3{font-size:1.05rem;font-weight:700;color:#f1f5f9;margin:1.75rem 0 .6rem;padding-bottom:.4rem;border-bottom:1px solid #1e293b;}
+        .art-body ul{padding-left:1.25rem;margin-bottom:1.1rem;}
+        .art-body ul li{color:#cbd5e1;font-size:.92rem;line-height:1.7;margin-bottom:.35rem;list-style-type:disc;}
+        .art-body strong{color:#f1f5f9;font-weight:600;}
+        .art-body code{background:#1e293b;padding:2px 7px;border-radius:5px;font-size:.82rem;font-family:monospace;color:#a78bfa;}
+        .art-body table{width:100%;border-collapse:collapse;font-size:.85rem;margin-bottom:1.1rem;overflow-x:auto;display:block;}
+        .art-body th{background:#1e293b;padding:9px 13px;text-align:left;font-weight:700;color:#cbd5e1;border:1px solid #334155;white-space:nowrap;}
+        .art-body td{padding:9px 13px;color:#94a3b8;border:1px solid #334155;}
+        .art-body .overflow-x-auto{overflow-x:auto;}
+
+        /* FOOTER */
+        .art-footer{margin-top:3rem;padding-top:1.5rem;border-top:1px solid #1e293b;display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center;}
+        .back-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:10px;background:#1e293b;border:1px solid #334155;color:#cbd5e1;font-size:.875rem;font-weight:600;transition:all .2s;}
+        .back-btn:hover{border-color:#3b82f6;color:#3b82f6;}
+        .home-btn{display:inline-flex;align-items:center;gap:7px;padding:10px 20px;border-radius:10px;background:linear-gradient(135deg,#3b82f6,#8b5cf6);color:#fff;font-size:.875rem;font-weight:600;transition:opacity .2s;}
+        .home-btn:hover{opacity:.85;}
+
+        /* OTHER ARTICLES */
+        .other-title{font-size:1rem;font-weight:700;color:#f1f5f9;margin-bottom:1rem;}
+        .other-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:.85rem;}
+        .other-card{background:#1e293b;border:1px solid #334155;border-radius:12px;padding:1rem;cursor:pointer;transition:border-color .2s,transform .2s;display:block;}
+        .other-card:hover{border-color:#3b82f6;transform:translateY(-2px);}
+        .other-card-cat{font-size:.65rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.4rem;}
+        .other-card-title{font-size:.875rem;font-weight:600;color:#f1f5f9;line-height:1.4;}
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-in">
+        <a href="index.html" class="nav-logo">
+            <div class="nav-logo-icon"><i class="fa-solid fa-microchip"></i></div>
+            <span class="nav-logo-text">XJava Modules</span>
+        </a>
+        <a href="../index.html#articles" class="nav-back">
+            <i class="fa-solid fa-arrow-left"></i> All Articles
+        </a>
+    </div>
+</nav>
+
+<div class="wrap">
+
+    
+    <div class="art-header">
+        <div class="art-cat">
+            <i class="fa-solid fa-scale-balanced"></i> Root
+        </div>
+        <h1 class="art-title">Root vs Non-Root for Android Tweaking — Which One?</h1>
+        <p class="art-desc">A practical comparison of what you can and cannot do with each approach.</p>
+    </div>
+
+    <hr class="art-divider">
+
+    
+        <div class="ad-slot">
+            <ins class="adsbygoogle" style="display:block;width:100%" data-ad-client="ca-pub-5565071752876543" data-ad-slot="AUTO" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    <div class="art-body">
+        <p>Root gives you more power. Non-root is safer and easier. The gap between them has gotten smaller — here is a breakdown of what each can and cannot do.</p>
+                    <h3>What Root Unlocks</h3>
+                    <ul>
+                        <li>Full filesystem access — read and write anywhere</li>
+                        <li>Kernel-level tweaks — CPU governor, IO scheduler, thermal control</li>
+                        <li>System partition modifications — remove any system app</li>
+                        <li>Deep hardware control — GPU frequency, display calibration at driver level</li>
+                        <li>Magisk module ecosystem</li>
+                        <li>Hosts-level ad blocking — affects all apps and browsers</li>
+                    </ul>
+                    <h3>Trade-offs of Root</h3>
+                    <ul>
+                        <li>Requires unlocked bootloader — voids warranty on most devices</li>
+                        <li>Banking apps may stop working — manageable with DenyList</li>
+                        <li>OTA updates may fail or need manual handling</li>
+                        <li>A bad module can bootloop — requires recovery knowledge</li>
+                    </ul>
+                    <h3>What Non-Root Can Do</h3>
+                    <ul>
+                        <li>System settings tweaks — animation scale, density, display parameters</li>
+                        <li>Silent app install/uninstall and permission management</li>
+                        <li>Performance tweaks — downscale, background process limits</li>
+                        <li>Debloat without touching partitions</li>
+                        <li>ADB-level API access via Shizuku or Axeron</li>
+                    </ul>
+                    <h3>What Non-Root Cannot Do</h3>
+                    <ul>
+                        <li>Kernel parameter changes — CPU governor, scheduler, frequency</li>
+                        <li>Deep thermal control</li>
+                        <li>System partition writes</li>
+                        <li>Magisk or KernelSU modules</li>
+                    </ul>
+                    <h3>Which Should You Use?</h3>
+                    <p>If you want maximum control and understand the risks — root. If you want meaningful tweaks without touching the bootloader — Shizuku or Axeron gets you about 70-80% of the way there. Many users run both.</p>
+    
+                    <h3>The Bootloader Unlock Question</h3>
+                    <p>Root requires an unlocked bootloader. This process varies significantly by manufacturer. Google Pixel devices are straightforward to unlock. Samsung devices in most regions have a hardware fuse that permanently trips when you unlock, affecting Samsung Pay. Xiaomi requires waiting 7 days after requesting unlock permission through their servers.</p>
+                    <p>Before committing to root, research the specific unlock process for your exact device model and region. Some devices cannot be unlocked at all.</p>
+
+                    <h3>OTA Updates With Root</h3>
+                    <p>OTA system updates become more complicated with root. With Magisk, you can often update by patching the new boot image after the OTA downloads. Many rooted users prefer to wait a few days after an OTA release to see if the community has worked out the update process before proceeding.</p>
+                    <p>Non-root setups via Shizuku or Axeron have zero impact on OTA updates. You can update normally and just restart the service afterward.</p>
+
+                    <h3>Banking Apps and Root Detection</h3>
+                    <p>Modern banking apps use Google Play Integrity API to check device integrity. A rooted device will fail this check by default. With Magisk's DenyList and modules like Play Integrity Fix, many banking apps can be made to work again. KernelSU and APatch tend to have better baseline results because their root implementation is harder to detect. However, this is an ongoing cat-and-mouse game.</p>
+                    <p>Non-root setups have no issues with banking apps whatsoever — this is one of the biggest practical advantages of the Shizuku and Axeron approach.</p>
+
+                    <h3>Practical Recommendation by Use Case</h3>
+                    <p><strong>Better performance tweaks:</strong> Non-root with Shizuku or Axeron covers downscaling, animation tweaks, and system property changes without risk.</p>
+                    <p><strong>Remove system bloatware:</strong> Non-root works for most cases. Shizuku-based tools can uninstall system apps without root.</p>
+                    <p><strong>Full ad blocking:</strong> Root gives you hosts-file level blocking covering all apps. Non-root ad blocking is limited to browser-level solutions.</p>
+                    <p><strong>Maximum customization:</strong> Root is the only path. Custom kernels, deep system modifications, and full filesystem access require it.</p>
+    
+    </div>
+
+    
+    <div class="art-footer">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <a href="index.html" class="home-btn"><i class="fa-solid fa-house"></i> XJava Modules</a>
+    </div>
+
+    
+    <div style="margin-top:2.5rem;">
+        <div class="other-title">More Articles</div>
+        <div class="other-grid" id="other-articles"></div>
+    </div>
+
+</div>
+
+<script>
+const allArticles = [
+    {slug:'magisk-vs-kernelsu', title:"Magisk vs KernelSU vs APatch — What's the Difference?", cat:'Root', color:'#f97316'},
+    {slug:'shizuku-setup', title:'How to Setup and Connect Shizuku on Android', cat:'Non-Root', color:'#3b82f6'},
+    {slug:'what-is-shizuku', title:'What is Shizuku and What Can You Do With It?', cat:'Non-Root', color:'#8b5cf6'},
+    {slug:'boost-fps', title:'How to Actually Boost FPS on Android', cat:'Performance', color:'#22c55e'},
+    {slug:'root-vs-nonroot', title:'Root vs Non-Root for Android Tweaking — Which One?', cat:'Root', color:'#eab308'},
+    {slug:'what-is-axmanager', title:'What is AxManager and How to Use It', cat:'Non-Root', color:'#a855f7'},
+];
+const current = 'root-vs-nonroot';
+const others = allArticles.filter(a => a.slug !== current);
+const grid = document.getElementById('other-articles');
+others.forEach(a => {
+    grid.innerHTML += `<a href="${a.slug}.html" class="other-card">
+        <div class="other-card-cat" style="color:${a.color}">${a.cat}</div>
+        <div class="other-card-title">${a.title}</div>
+    </a>`;
+});
+</script>
+
+</body>
+</html>
